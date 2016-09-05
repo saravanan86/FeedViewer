@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="activity_master" type="layout">@layout/activity_two_fragment</item>
+    <bool name="isPhone">false</bool>
+</resources>
