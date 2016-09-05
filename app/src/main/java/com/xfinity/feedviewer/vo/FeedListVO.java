@@ -105,6 +105,7 @@ public class FeedListVO {
             }
 
         }
+        //mFeedList = resultData;
         return resultData;
 
     }
@@ -113,6 +114,25 @@ public class FeedListVO {
 
         return mFeedList.size() > position ? mFeedList.get( position ) : null;
 
+
+    }
+
+    public int getFeedItemPosition( String title ){
+
+        int len = mFeedList.size();
+        int position = 0;
+        for( int i = 0; i < len; i++ ){
+
+            if( mFeedList.get(i).getTitle().equals( title ) ){
+
+                position = i;
+                break;
+
+            }
+
+        }
+        //mFeedList = resultData;
+        return position;
 
     }
 

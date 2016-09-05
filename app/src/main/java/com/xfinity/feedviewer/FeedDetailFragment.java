@@ -15,9 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
 import com.xfinity.feedviewer.vo.FeedDataVO;
 import com.xfinity.feedviewer.vo.FeedListVO;
 
@@ -28,6 +31,7 @@ public class FeedDetailFragment extends Fragment {
 
     public static final String EXTRA_FEED_POSITION = "feedPosition";
     private int feedPosition = 0;
+    public ProgressBar progressBar;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,18 +73,37 @@ public class FeedDetailFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         setHasOptionsMenu(true);
         View view = inflater.inflate( R.layout.fragment_viewer, container, false );
-        ImageView image = (ImageView) view.findViewById( R.id.detailImage );
+        final ImageView image = (ImageView) view.findViewById( R.id.detailImage );
         TextView textTitle = (TextView) view.findViewById( R.id.detailTitle );
         TextView textDescription = (TextView) view.findViewById( R.id.detailDescription );
+        progressBar = (ProgressBar) view.findViewById( R.id.progressBar );
         FeedDataVO feedData = FeedListVO.getFeedListVO().getFeedData(feedPosition);
         try {
             String imageUrl = feedData.getImageUrl();
+            RequestCreator img;
             if (!imageUrl.equals("")) {
-                Picasso.with(getActivity().getApplicationContext()).load(imageUrl).resize(500, 500).into(image);
+
+                img = Picasso.with(getActivity().getApplicationContext()).load(imageUrl);
+
+            }else{
+
+                img =Picasso.with(getActivity().getApplicationContext()).load(R.drawable.xfinity);
+
             }
-            else {
-                Picasso.with(getActivity().getApplicationContext()).load(R.drawable.xfinity).resize(500, 500).centerCrop().into(image);
-            }
+            img.resize( 500, 500 ).into(image, new Callback() {
+                @Override
+                public void onSuccess() {
+                    progressBar.setVisibility(View.GONE);
+                    image.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onError() {
+                    // TODO Auto-generated method stub
+
+                }
+
+            });
             textTitle.setText( feedData.getTitle() );
             textDescription.setText( feedData.getDescription() );
         }catch (Exception e){

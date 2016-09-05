@@ -33,6 +33,7 @@ public class MainActivity extends SingleFragmentActivity implements FeedListFrag
     @Override
     public void onItemSelected(int position) {
 
+
         if (findViewById(R.id.fragmentdetailContainer) == null) {
 
             Intent intent = new Intent( MainActivity.this, FeedDetailActivity.class );

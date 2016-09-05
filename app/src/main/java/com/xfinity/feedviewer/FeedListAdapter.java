@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.xfinity.feedviewer.vo.FeedDataVO;
+import com.xfinity.feedviewer.vo.FeedListVO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,7 +68,7 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.FeedLi
             @Override
             public void onClick(View v) {
 
-                callBackObject.onItemSelected( position );
+                callBackObject.onItemSelected(FeedListVO.getFeedListVO().getFeedItemPosition(mFeedValues.get(position).getTitle()));
                 /*Intent intent = new Intent( context.getApplicationContext(), FeedDetailActivity.class );
                 intent.putExtra( FeedDetailFragment.EXTRA_FEED_POSITION, position );
                 context.startActivity( intent );*/
