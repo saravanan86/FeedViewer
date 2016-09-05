@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">FeedViewer</string>
-    <string name="preText">Select an item from list items on your left</string>
     <string name="search">Search Items</string>
     <string name="app_label">Search Items</string>
     <string name="search_hint">Search items</string>
