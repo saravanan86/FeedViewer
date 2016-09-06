@@ -1,6 +1,8 @@
 # FeedViewer
 App displays details of Simpsons and Starwars characters which are festched from restful web services. Below are some of screen caps of the App from Android phone and tablet.
 
+Note: APKs that are built with latest code base is present in https://github.com/saravanan86/FeedViewer/tree/master/apks
+
 ### Android Phone:
 <img src="/ScreenCaps/PhoneMainList.png" alt="Phone Main List" width="200px"/>&nbsp;&nbsp;<img src="/ScreenCaps/PhoneMainGrid.png" alt="Phone Main Grid" width="200px"/>&nbsp;&nbsp;<img src="/ScreenCaps/PhoneDetail.png" alt="Phone Detail" width="200px"/>&nbsp;&nbsp;<img src="/ScreenCaps/PhoneSearch.png" alt="Phone Search" width="200px"/>
 
@@ -33,7 +35,11 @@ As we need to build two different App from same code base I have used product fl
 To build the app ./gradlew clean build command will create both the apps. Below are the detailed steps to create both the apps 
 
 ```sh
-export ANDROID_HOME=/Users/[USER_NAME]/Library/Android/sdk
+//prerequiste
+export ANDROID_HOME=/Users/[USER_NAME]/Library/Android/sdk //Set ANDROID_HOME
+export JAVA_HOME=/Users/[USER_NAME]/jdk1.8 //Set ANDROID_HOME
+
+
 git clone https://github.com/saravanan86/FeedViewer.git
 cd FeedViewer/
 ./gradlew build clean
