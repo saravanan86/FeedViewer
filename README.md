@@ -1,13 +1,25 @@
 # FeedViewer
-App displays details of Simpsons and Starwars characters which are festched from restful web services. Below are some of screen caps of the App from Android phone and tablet.
+App displays details of Simpsons and Starwars characters which are festched from restful web services. Below are some of screen caps of the App from Android phone and tablet along with the points covered in the app based on excercise sheet
 
-Note: APKs that are built with latest code base is present in https://github.com/saravanan86/FeedViewer/tree/master/apks
 
 ### Android Phone:
+1. App displays only the text in the list inside the cardview.
+2. List is implemented with RecyclerView and it is toggelable from List to Grid and viceversa 
+3. Detail view displays Image, Title and Desciption using LinearLayout. 
+4. App name will be shown in the title bar for list of items screen and Selected item will be shown in title bar for detailed view.
+5. Bonus item: Search is implmented to filter out lists in list item view.
+
 <img src="/ScreenCaps/PhoneMainList.png" alt="Phone Main List" width="200px"/>&nbsp;&nbsp;<img src="/ScreenCaps/PhoneMainGrid.png" alt="Phone Main Grid" width="200px"/>&nbsp;&nbsp;<img src="/ScreenCaps/PhoneDetail.png" alt="Phone Detail" width="200px"/>&nbsp;&nbsp;<img src="/ScreenCaps/PhoneSearch.png" alt="Phone Search" width="200px"/>
 
 
 ### Android Tablet:
+1. App displays only the text in the list inside the cardview and Detail view will be populated once a list item is selected.
+2. List is implemented with RecyclerView.
+3. Detail view displays Image, Title and Desciption using LinearLayout. 
+4. App name will be shown in the title bar.
+5. Bonus item: Search is implmented to filter out lists in list item view.
+
+
 <img src="/ScreenCaps/TabletList.png" alt="Tablet List" width="275px"/>&nbsp;&nbsp;<img src="/ScreenCaps/TabletSearch.png" alt="Tablet Detail" width="275px"/>&nbsp;&nbsp;<img src="/ScreenCaps/TabletDetail.png" alt="Tablet Search" width="275px"/>
 
 ### Building the App: 
@@ -45,6 +57,8 @@ cd FeedViewer/
 ./gradlew build clean
 cd app/build/outputs/apk //This will list all APKs builded
 ```
+
+Note: APKs that are built with latest code base is present in https://github.com/saravanan86/FeedViewer/tree/master/apks
 
 ### Dependecies
 
