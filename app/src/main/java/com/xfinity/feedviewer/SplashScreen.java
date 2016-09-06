@@ -45,8 +45,6 @@ public class SplashScreen extends AppCompatActivity {
             }
         });
         feedFetcher.execute( BuildConfig.FEED_URL );
-        //feedFetcher.execute( "http://api.duckduckgo.com/?q=simpsons+characters&format=json" );
-        //feedFetcher.execute( getResources().getString( R.string.app_feed_url ) );
 
     }
 

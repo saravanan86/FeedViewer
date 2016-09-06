@@ -1,6 +1,5 @@
 package com.xfinity.feedviewer;
 
-import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
@@ -9,10 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import android.telecom.Call;
-import android.util.Log;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,7 +22,7 @@ import com.xfinity.feedviewer.vo.FeedListVO;
 import java.util.ArrayList;
 
 /**
- * Created by kathires on 6/17/16.
+ * Created by kathires on 8/30/16.
  */
 
 public class FeedListFragment extends Fragment {
@@ -59,32 +54,14 @@ public class FeedListFragment extends Fragment {
         callBacks = null;
     }
 
-    /*@Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        callBacks = (CallBacks)activity;
-    }*/
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        //Log.d( "FeedFragment: ", getArguments().getString( EXTRA_FEED_NAME ) );
-        //Log.d( "FeedFragment: ", getArguments().getString( EXTRA_FEED_VALUE ) );
+
         try {
 
             data = FeedListVO.getFeedListVO().getFeedList();
-
-                //data = new ArrayList();
-                //data.add(new FeedDataVO( "title1", "Description1","" ));
-                //data = new ArrayList<()>;
-            //BrandCollectionFeed brandCollectionFeed = new BrandCollectionFeed(new JSONObject(getArguments().getString(EXTRA_FEED_VALUE)));
-            //data = brandCollectionFeed.getValues(getArguments().getString( EXTRA_FEED_NAME ));
-            if (savedInstanceState != null) {
-                //Restore the fragment's instance
-
-
-            }
             setHasOptionsMenu(true);
 
         }catch(Exception e){
@@ -118,8 +95,6 @@ public class FeedListFragment extends Fragment {
                 adapter = new FeedListAdapter( FeedListVO.getFeedListVO().getFeedList( newText ), callBacks );
                 recyclerView.setAdapter(adapter);
                 recyclerView.invalidate();
-                //adapter.notifyDataSetChanged();
-                //recyclerView.notify
                 return false;
             }
         });
