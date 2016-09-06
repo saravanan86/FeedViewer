@@ -1,5 +1,5 @@
 # FeedViewer
-App displays details of Simpsons and Starwars characters which are festched from restful web services. Below are some of screen caps of the App from Android phone and tablet along with the points covered in the app based on excercise sheet
+App displays details of Simpsons and Starwars characters which are fetched from restful web services. Below are some of screencaps of the App from Android phone and tablet along with the points covered in the app based on excercise sheet
 
 
 ### Android Phone:
