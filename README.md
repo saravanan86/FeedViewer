@@ -32,9 +32,14 @@ As we need to build two different App from same code base I have used product fl
 
 To build the app ./gradlew clean build command will create both the apps. Below are the detailed steps to create both the apps 
 
-'''shell
+```sh
+export ANDROID_HOME=/Users/[USER_NAME]/Library/Android/sdk
+git clone https://github.com/saravanan86/FeedViewer.git
+cd FeedViewer/
+./gradlew build clean
+cd app/build/outputs/apk //This will list all APKs builded
+```
 
-'''
 
 ### Libraries and Components used:
 
