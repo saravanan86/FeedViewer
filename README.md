@@ -40,6 +40,12 @@ cd FeedViewer/
 cd app/build/outputs/apk //This will list all APKs builded
 ```
 
+### Dependecies
+
+      compile 'com.android.support:appcompat-v7:23.4.0' //Need Android support library installed using Android SDK Manager
+      compile 'com.android.support:recyclerview-v7:23.2.1' //Repository from jcenter()
+      compile 'com.android.support:cardview-v7:23.0.0' //Repository from jcenter()
+      compile 'com.squareup.picasso:picasso:2.5.0' //Repository from jcenter()
 
 ### Libraries and Components used:
 
