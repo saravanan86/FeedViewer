@@ -8,6 +8,33 @@ App displays details of Simpsons and Starwars characters which are festched from
 ### Android Tablet:
 <img src="/ScreenCaps/TabletList.png" alt="Tablet List" width="275px"/>&nbsp;&nbsp;<img src="/ScreenCaps/TabletSearch.png" alt="Tablet Detail" width="275px"/>&nbsp;&nbsp;<img src="/ScreenCaps/TabletDetail.png" alt="Tablet Search" width="275px"/>
 
+### Building the App: 
+
+As we need to build two different App from same code base I have used product flavors. Product flavors contains 'ApplicationId', 'Feed Url' and 'App Name' properties in it. Below is the product flavors thats being used in build.gradle
+      
+      
+      
+      productFlavors {
+        SimpsonsViewer {
+            applicationId "com.xfinity.feedviewer.simpsonsviewer"
+            buildConfigField "String", "FEED_URL","\"http://api.duckduckgo.com/?q=simpsons+characters&format=json\""
+            resValue "string", "app_name", "Simpsons Character Viewer"
+        }
+
+
+        StarwarsViewer {
+            applicationId "com.xfinity.feedviewer.gotviewer"
+            buildConfigField "String", "FEED_URL","\"http://api.duckduckgo.com/?q=star+wars+characters&format=json\""
+            resValue "string", "app_name", "Star Wars Character Viewer"
+        }
+    }
+      
+
+To build the app ./gradlew clean build command will create both the apps. Below are the detailed steps to create both the apps 
+
+'''shell
+
+'''
 
 ### Libraries and Components used:
 
